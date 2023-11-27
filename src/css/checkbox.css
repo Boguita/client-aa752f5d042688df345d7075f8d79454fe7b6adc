@@ -1,0 +1,77 @@
+/* Estilo básico para todos los checkboxes */
+input[type="checkbox"].custom-checkbox {
+  display: none;
+  /* Oculta el checkbox nativo */
+}
+
+/* Estilo para la etiqueta label */
+label.check {
+  cursor: pointer;
+  position: relative;
+  
+  margin: auto;
+  width: 20px;
+  height: 20px;
+  -webkit-tap-highlight-color: transparent;
+  transform: translate3d(0, 0, 0);
+}
+
+label.check:before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(198, 214, 248, 0.03);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+label.check svg {
+  position: relative;
+  z-index: 1;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #c8ccd4;
+  stroke-width: 1.5;
+  transform: translate3d(0, 0, 0);
+  transition: all 0.2s ease;
+}
+
+label.check svg path {
+  stroke-dasharray: 60;
+  stroke-dashoffset: 0;
+}
+
+label.check svg polyline {
+  stroke-dasharray: 22;
+  stroke-dashoffset: 66;
+}
+
+label.check:hover:before {
+  opacity: 1;
+}
+
+input[type="checkbox"].custom-checkbox:checked+label.check svg {
+  stroke: #4285f4;
+}
+
+input[type="checkbox"].custom-checkbox:checked+label.check svg path {
+  stroke-dashoffset: 60;
+  transition: all 0.3s linear;
+}
+
+input[type="checkbox"].custom-checkbox:checked+label.check svg polyline {
+  stroke-dashoffset: 42;
+  transition: all 0.2s linear;
+  transition-delay: 0.15s;
+}
+
+input[type="checkbox"].custom-checkbox:disabled+label.check svg polyline {
+  stroke-dashoffset: 42;
+  transition: all 0.2s linear;
+  transition-delay: 0.15s;
+}

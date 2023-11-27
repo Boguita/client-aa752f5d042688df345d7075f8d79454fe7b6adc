@@ -1,0 +1,33 @@
+.custom-modal {
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  background: white;
+    color: black;
+    padding: 2rem;
+    width: 80%;
+    max-width: 40rem;
+}
+
+.custom-modal.react-modal__content--after-open {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.custom-modal.react-modal__content--before-close {
+  transform: translateY(-50%);
+  opacity: 0;
+}
+
+.custom-overlay {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.custom-overlay.react-modal__overlay--after-open {
+  opacity: 1;
+}
+
+.custom-overlay.react-modal__overlay--before-close {
+  opacity: 0;
+}
